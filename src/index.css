@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Jua', 'Noto Sans KR', system-ui, sans-serif;
+    color: #0f172a;
+    background-color: #03224c;
+  }
+}
+
+@keyframes swim-wiggle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-1.5deg);
+  }
+  75% {
+    transform: translateY(6px) rotate(1.5deg);
+  }
+}
+
+@keyframes fin-tail {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100%) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes sea-wave {
+  0%, 100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25px) scaleY(1.08);
+  }
+}
+
+@keyframes caustics {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.1) rotate(3deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.9);
+  }
+}
+
+.animate-swim {
+  animation: swim-wiggle 3s ease-in-out infinite;
+}
+
+.animate-tail {
+  transform-origin: left center;
+  animation: fin-tail 0.8s ease-in-out infinite;
+}
+
+.animate-bubble {
+  animation: bubble-rise linear infinite;
+}
+
+.animate-wave {
+  animation: sea-wave 6s ease-in-out infinite;
+}
+
+.animate-caustics {
+  animation: caustics 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-gentle 2.5s ease-in-out infinite;
+}
+
+.pulse-card {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Custom text stroke / shadows for ultra high contrast readable fractions */
+.fraction-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.text-stroke-sm {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+}
+
+.underwater-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
